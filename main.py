@@ -134,7 +134,6 @@ if __name__ == '__main__':
             "15": ("Tiny.cc", tinycc),
             "16": ("TinyURL.com",tinyurl),
             "17": ("Git.io", gitio),
-            "18": ("Tiny.cc"),
            }
 
     for key in sorted(menu.keys()):
