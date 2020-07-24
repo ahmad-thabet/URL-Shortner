@@ -38,9 +38,12 @@ def clckru():
     result = s.clckru.short(domain)
     print(result)
 
-
-
-
+def cuttly():
+    key = input("Enter API Key .. ")
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(api_key='YOUR_KEY')
+    result = s.cuttly.short('http://www.google.com')
+    print(result)
 
 
 
@@ -49,7 +52,7 @@ if __name__ == '__main__':
             "2":("Bit.ly",bitly),
             "3": ("Chilp.it",chilpit),
             "4": ("Clck.ru",clckru),
-            "5": ("Cutt.ly"),
+            "5": ("Cutt.ly",cuttly),
             "6": ("Da.gd"),
             "7": ("Git.io"),
             "8": ("Is.gd"),
