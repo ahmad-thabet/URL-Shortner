@@ -21,8 +21,7 @@ def adfly():
     key = input("Enter API Key .. ")
     user_id = input("Enter User ID .. ")
     domain = input("Enter Site .. ")
-    s = pyshorteners.Shortener(api_key=key, user_id=user_id,
-                               , type='int')
+    s = pyshorteners.Shortener(api_key=key, user_id=user_id, type='int')
     result = s.adfly.short(site)
     print(result)
 
@@ -45,6 +44,12 @@ def cuttly():
     result = s.cuttly.short('http://www.google.com')
     print(result)
 
+def dagd():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.dagd.short(domain)
+    print(result)
+
 
 
 if __name__ == '__main__':
@@ -53,7 +58,7 @@ if __name__ == '__main__':
             "3": ("Chilp.it",chilpit),
             "4": ("Clck.ru",clckru),
             "5": ("Cutt.ly",cuttly),
-            "6": ("Da.gd"),
+            "6": ("Da.gd",dagd),
             "7": ("Git.io"),
             "8": ("Is.gd"),
             "9": ("NullPointer"),
