@@ -56,7 +56,17 @@ def gitio():
     result = s.gitio.short(domain)
     print(result)
 
+def isgd():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.isgd.short(domain)
+    print(result)
 
+def nullpointer():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(domain='https://0x0.st')
+    result = s.nullpointer.short(domain)
+    print(result)
 
 
 if __name__ == '__main__':
@@ -67,8 +77,8 @@ if __name__ == '__main__':
             "5": ("Cutt.ly",cuttly),
             "6": ("Da.gd",dagd),
             "7": ("Git.io", gitio),
-            "8": ("Is.gd"),
-            "9": ("NullPointer"),
+            "8": ("Is.gd", isgd),
+            "9": ("NullPointer", nullpointer),
             "10": ("Os.db"),
             "11": ("Ow.ly"),
             "12": ("Po.st"),
