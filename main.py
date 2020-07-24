@@ -101,6 +101,13 @@ def shortcm():
     result = s.shortcm.short(domain)
     print(result)
 
+def tinycc():
+    key = input("Enter API Key .. ")
+    user = input("Enter username .. ")
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(api_key=key, login=user)
+    result = s.tinycc.short(domain)
+    print(result)
 
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
@@ -117,7 +124,7 @@ if __name__ == '__main__':
             "12": ("Po.st",post),
             "13": ("Qps.ru",qpsru),
             "14": ("Short.cm", shortcm),
-            "15": ("Tiny.cc"),
+            "15": ("Tiny.cc", tinycc),
             "16": ("TinyURL.com",tinyurl),
             "17": ("Git.io"),
             "18": ("Tiny.cc"),
