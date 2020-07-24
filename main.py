@@ -68,6 +68,12 @@ def nullpointer():
     result = s.nullpointer.short(domain)
     print(result)
 
+def osdb():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.osdb.short(domain)
+    print(result)
+
 
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
@@ -79,7 +85,7 @@ if __name__ == '__main__':
             "7": ("Git.io", gitio),
             "8": ("Is.gd", isgd),
             "9": ("NullPointer", nullpointer),
-            "10": ("Os.db"),
+            "10": ("Os.db", osdb),
             "11": ("Ow.ly"),
             "12": ("Po.st"),
             "13": ("Qps.ru"),
