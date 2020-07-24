@@ -94,6 +94,14 @@ def qpsru():
     result = s.qpsru.short(domain)
     print(result)
 
+def shortcm():
+    key = input("Enter API Key .. ")
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(api_key=key)
+    result = s.shortcm.short(domain)
+    print(result)
+
+
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
             "2":("Bit.ly",bitly),
@@ -108,7 +116,7 @@ if __name__ == '__main__':
             "11": ("Ow.ly", owly),
             "12": ("Po.st",post),
             "13": ("Qps.ru",qpsru),
-            "14": ("Short.cm"),
+            "14": ("Short.cm", shortcm),
             "15": ("Tiny.cc"),
             "16": ("TinyURL.com",tinyurl),
             "17": ("Git.io"),
