@@ -80,7 +80,12 @@ def owly():
     result = s.owly.short(domain)
     print(result)
 
-
+def post():
+    key = input("Enter API Key .. ")
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(api_key='YOUR_KEY')
+    result = s.post.short(domain)
+    print(result)
 
 
 if __name__ == '__main__':
@@ -95,7 +100,7 @@ if __name__ == '__main__':
             "9": ("NullPointer", nullpointer),
             "10": ("Os.db", osdb),
             "11": ("Ow.ly", owly),
-            "12": ("Po.st"),
+            "12": ("Po.st",post),
             "13": ("Qps.ru"),
             "14": ("Short.cm"),
             "15": ("Tiny.cc"),
