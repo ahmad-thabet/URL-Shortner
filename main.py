@@ -3,15 +3,21 @@ import pyshorteners
 def invalid():
    print ("INVALID CHOICE!")
 
+def tinyurl():
+    s = pyshorteners.Shortener()
+    site = input("Enter Site .. ")
+    result = s.tinyurl.short(site)
+    print(result)
+
 def Adfly():
     key = input("Enter API Key .. ")
     user_id = input("Enter User ID .. ")
-    domain = input("Enter Domain")
+    domain = input("Enter Site .. ")
     s = pyshorteners.Shortener(api_key=key, user_id=user_id,
                                domain=domain, type='int')
 if __name__ == '__main__':
 
-    menu = {"1":("adf.ly"),
+    menu = {"1":("adf.ly",Adfly),
             "2":("Bit.ly"),
             "3": ("Chilp.it"),
             "4": ("Clck.ru"),
@@ -26,12 +32,12 @@ if __name__ == '__main__':
             "13": ("Qps.ru"),
             "14": ("Short.cm"),
             "15": ("Tiny.cc"),
-            "16": ("TinyURL.com"),
+            "16": ("TinyURL.com",tinyurl),
             "17": ("Git.io"),
             "18": ("Tiny.cc"),
            }
     for key in sorted(menu.keys()):
-         print(key+": " + menu[key])
+         print(key+": " + menu[key][0])
 
     ans = input("Make A Choice.. ")
     menu.get(ans,[None,invalid])[1]()
