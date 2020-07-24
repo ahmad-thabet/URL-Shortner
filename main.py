@@ -32,6 +32,15 @@ def chilpit():
     result = s.chilpit.short(domain)
     print(result)
 
+def clckru():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.clckru.short(domain)
+    print(result)
+
+
+
+
 
 
 
@@ -39,7 +48,7 @@ if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
             "2":("Bit.ly",bitly),
             "3": ("Chilp.it",chilpit),
-            "4": ("Clck.ru"),
+            "4": ("Clck.ru",clckru),
             "5": ("Cutt.ly"),
             "6": ("Da.gd"),
             "7": ("Git.io"),
