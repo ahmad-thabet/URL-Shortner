@@ -3,22 +3,37 @@ import pyshorteners
 def invalid():
    print ("INVALID CHOICE!")
 
+def bitly():
+    key = input("Enter API key .. ")
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener(api_key='YOUR_KEY')
+    result = s.bitly.short(domain)
+    print(result)
+
+
 def tinyurl():
     s = pyshorteners.Shortener()
     site = input("Enter Site .. ")
     result = s.tinyurl.short(site)
     print(result)
 
-def Adfly():
+def adfly():
     key = input("Enter API Key .. ")
     user_id = input("Enter User ID .. ")
     domain = input("Enter Site .. ")
     s = pyshorteners.Shortener(api_key=key, user_id=user_id,
-                               domain=domain, type='int')
-if __name__ == '__main__':
+                               , type='int')
+    result = s.adfly.short(site)
+    print(result)
 
-    menu = {"1":("adf.ly",Adfly),
-            "2":("Bit.ly"),
+
+
+
+
+
+if __name__ == '__main__':
+    menu = {"1":("adf.ly",adfly),
+            "2":("Bit.ly",bitly),
             "3": ("Chilp.it"),
             "4": ("Clck.ru"),
             "5": ("Cutt.ly"),
@@ -36,6 +51,7 @@ if __name__ == '__main__':
             "17": ("Git.io"),
             "18": ("Tiny.cc"),
            }
+
     for key in sorted(menu.keys()):
          print(key+": " + menu[key][0])
 
