@@ -50,6 +50,13 @@ def dagd():
     result = s.dagd.short(domain)
     print(result)
 
+def gitio():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.gitio.short(domain)
+    print(result)
+
+
 
 
 if __name__ == '__main__':
@@ -59,7 +66,7 @@ if __name__ == '__main__':
             "4": ("Clck.ru",clckru),
             "5": ("Cutt.ly",cuttly),
             "6": ("Da.gd",dagd),
-            "7": ("Git.io"),
+            "7": ("Git.io", gitio),
             "8": ("Is.gd"),
             "9": ("NullPointer"),
             "10": ("Os.db"),
