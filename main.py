@@ -83,10 +83,16 @@ def owly():
 def post():
     key = input("Enter API Key .. ")
     domain = input("Enter Site .. ")
-    s = pyshorteners.Shortener(api_key='YOUR_KEY')
+    s = pyshorteners.Shortener(api_key=key)
     result = s.post.short(domain)
     print(result)
 
+
+def qpsru():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.qpsru.short(domain)
+    print(result)
 
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
@@ -101,7 +107,7 @@ if __name__ == '__main__':
             "10": ("Os.db", osdb),
             "11": ("Ow.ly", owly),
             "12": ("Po.st",post),
-            "13": ("Qps.ru"),
+            "13": ("Qps.ru",qpsru),
             "14": ("Short.cm"),
             "15": ("Tiny.cc"),
             "16": ("TinyURL.com",tinyurl),
