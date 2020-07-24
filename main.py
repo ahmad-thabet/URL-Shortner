@@ -74,6 +74,14 @@ def osdb():
     result = s.osdb.short(domain)
     print(result)
 
+def owly():
+    domain = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.owly.short(domain)
+    print(result)
+
+
+
 
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
@@ -86,7 +94,7 @@ if __name__ == '__main__':
             "8": ("Is.gd", isgd),
             "9": ("NullPointer", nullpointer),
             "10": ("Os.db", osdb),
-            "11": ("Ow.ly"),
+            "11": ("Ow.ly", owly),
             "12": ("Po.st"),
             "13": ("Qps.ru"),
             "14": ("Short.cm"),
