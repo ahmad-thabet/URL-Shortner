@@ -11,12 +11,6 @@ def bitly():
     print(result)
 
 
-def tinyurl():
-    s = pyshorteners.Shortener()
-    site = input("Enter Site .. ")
-    result = s.tinyurl.short(site)
-    print(result)
-
 def adfly():
     key = input("Enter API Key .. ")
     user_id = input("Enter User ID .. ")
@@ -109,6 +103,19 @@ def tinycc():
     result = s.tinycc.short(domain)
     print(result)
 
+def tinyurl():
+    site = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.tinyurl.short(site)
+    print(result)
+
+def gitio():
+    site = input("Enter Site .. ")
+    s = pyshorteners.Shortener()
+    result = s.gitio.short(site)
+    print(result)
+
+
 if __name__ == '__main__':
     menu = {"1":("adf.ly",adfly),
             "2":("Bit.ly",bitly),
@@ -126,7 +133,7 @@ if __name__ == '__main__':
             "14": ("Short.cm", shortcm),
             "15": ("Tiny.cc", tinycc),
             "16": ("TinyURL.com",tinyurl),
-            "17": ("Git.io"),
+            "17": ("Git.io", gitio),
             "18": ("Tiny.cc"),
            }
 
