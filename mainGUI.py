@@ -66,7 +66,7 @@ def dagd(url):
         dagd_txt.delete(0, END)
         s = pyshorteners.Shortener()
         result = s.dagd.short(url)
-        cuttly_txt.insert(0, result)
+        dagd_txt.insert(0, result)
     except:
         pass
 
@@ -76,6 +76,7 @@ def gitio(url):
         gitio_txt.delete(0, END)
         s = pyshorteners.Shortener()
         result = s.gitio.short(url)
+        print(result,'gitio')
         gitio_txt.insert(0, result)
     except:
         pass
@@ -91,7 +92,7 @@ def isgd(url):
         pass
 
 
-def nullpointer():
+def nullpointer(url):
     try:
         nullpointer_txt.delete(0, END)
         domain = config['nullpointer']['domain']
@@ -112,17 +113,7 @@ def osdb(url):
         pass
 
 
-def owly(url):
-    try:
-        owly_txt.delete(0, END)
-        s = pyshorteners.Shortener()
-        result = s.owly.short(url)
-        owly_txt.insert(0, result)
-    except:
-        pass
-
-
-def post():
+def post(url):
     try:
         post_txt.delete(0, END)
         key = config['post']['API_KEY']
@@ -133,7 +124,7 @@ def post():
         pass
 
 
-def qpsru():
+def qpsru(url):
     try:
         qpsru_txt.delete(0, END)
         s = pyshorteners.Shortener()
@@ -143,7 +134,7 @@ def qpsru():
         pass
 
 
-def shortcm():
+def shortcm(url):
     try:
         shortcm_txt.delete(0, END)
         key = config['shortcm']['API_KEY']
@@ -174,6 +165,7 @@ def tinyurlcom(url):
         tinyurlcom_txt.insert(0, result)
     except:
         pass
+
 
 
 def clicked():
@@ -230,8 +222,6 @@ def clicked():
     value += 6
     bar['value'] = value
 
-    if owly_chk_state.get():
-        owly(url)
     value += 6.5
     bar['value'] = value
 
@@ -273,6 +263,7 @@ default_checkbox = True
 
 targetURLlbl = Label(window, text='URL')
 targetURLtxt = Entry(window, width=50)
+targetURLtxt.insert(0,'https://www.google.com')
 targetURLbtn = Button(window, text='Short it!', command=clicked)
 targetURLlbl.grid(column=0, row=0)
 targetURLtxt.grid(column=1, row=0)
@@ -347,13 +338,6 @@ osdb_chk = Checkbutton(window, text='Os.db', var=osdb_chk_state)
 osdb_txt = Entry(window, width=txt_width)
 osdb_chk.grid(column=0, row=9)
 osdb_txt.grid(column=1, row=9)
-
-owly_chk_state = BooleanVar()
-owly_chk_state.set(default_checkbox)
-owly_chk = Checkbutton(window, text='Ow.ly', var=owly_chk_state)
-owly_txt = Entry(window, width=txt_width)
-owly_chk.grid(column=0, row=10)
-owly_txt.grid(column=1, row=10)
 
 post_chk_state = BooleanVar()
 post_chk_state.set(default_checkbox)
