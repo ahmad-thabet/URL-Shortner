@@ -109,11 +109,6 @@ def tinyurl():
     result = s.tinyurl.short(site)
     print(result)
 
-def gitio():
-    site = input("Enter Site .. ")
-    s = pyshorteners.Shortener()
-    result = s.gitio.short(site)
-    print(result)
 
 
 if __name__ == '__main__':
@@ -132,9 +127,8 @@ if __name__ == '__main__':
             "13": ("Qps.ru",qpsru),
             "14": ("Short.cm", shortcm),
             "15": ("Tiny.cc", tinycc),
-            "16": ("TinyURL.com",tinyurl),
-            "17": ("Git.io", gitio),
-           }
+            "16": ("TinyURL.com",tinyurl)
+            }
 
     for key in sorted(menu.keys()):
          print(key+": " + menu[key][0])
