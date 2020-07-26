@@ -3,125 +3,177 @@ from tkinter.ttk import *
 import pyshorteners
 import configparser
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
 
 def adfly(url):
-    adfly_txt.delete(0, END)
-    key = input("Enter API Key .. ")
-    user_id = input("Enter User ID .. ")
-    s = pyshorteners.Shortener(api_key=key, user_id=user_id, type='int')
-    result = s.adfly.short(url)
-    adfly_txt.insert(0, result)
+    try:
+        adfly_txt.delete(0, END)
+        key = config['adfly']['API_KEY']
+        user_id = config['adfly']['user_id']
+        s = pyshorteners.Shortener(api_key=key, user_id=user_id, type='int')
+        result = s.adfly.short(url)
+        adfly_txt.insert(0, result)
+    except:
+        pass
 
 
 def bitly(url):
-    bitly_txt.delete(0, END)
-    key = input("Enter API key .. ")
-    s = pyshorteners.Shortener(api_key='YOUR_KEY')
-    result = s.bitly.short(url)
-    bitly_txt.insert(0, result)
+    try:
+        bitly_txt.delete(0, END)
+        key = config['bitly']['API_KEY']
+        s = pyshorteners.Shortener(api_key=key)
+        result = s.bitly.short(url)
+        bitly_txt.insert(0, result)
+    except:
+        pass
 
 
 def chilpit(url):
-    chilpit_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.chilpit.short(url)
-    chilpit_txt.insert(0, result)
+    try:
+        chilpit_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.chilpit.short(url)
+        chilpit_txt.insert(0, result)
+    except:
+        pass
 
 
 def clckru(url):
-    clckru_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.clckru.short(url)
-    clckru_txt.insert(0, result)
+    try:
+        clckru_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.clckru.short(url)
+        clckru_txt.insert(0, result)
+    except:
+        pass
 
 
 def cuttly(url):
-    cuttly_txt.delete(0, END)
-    key = input("Enter API Key .. ")
-    s = pyshorteners.Shortener(api_key=key)
-    result = s.cuttly.short(url)
-    clckru_txt.insert(0, result)
+    try:
+        cuttly_txt.delete(0, END)
+        key = config['cuttly']['API_KEY']
+        s = pyshorteners.Shortener(api_key=key)
+        result = s.cuttly.short(url)
+        clckru_txt.insert(0, result)
+    except:
+        pass
 
 
 def dagd(url):
-    dagd_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.dagd.short(url)
-    cuttly_txt.insert(0, result)
+    try:
+        dagd_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.dagd.short(url)
+        cuttly_txt.insert(0, result)
+    except:
+        pass
 
 
 def gitio(url):
-    gitio_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.gitio.short(url)
-    gitio_txt.insert(0, result)
+    try:
+        gitio_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.gitio.short(url)
+        gitio_txt.insert(0, result)
+    except:
+        pass
 
 
 def isgd(url):
-    isgd_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.isgd.short(url)
-    isgd_txt.insert(0, result)
+    try:
+        isgd_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.isgd.short(url)
+        isgd_txt.insert(0, result)
+    except:
+        pass
 
 
 def nullpointer():
-    nullpointer_txt.delete(0, END)
-    s = pyshorteners.Shortener(domain='https://0x0.st')
-    result = s.nullpointer.short(url)
-    nullpointer_txt.insert(0, result)
+    try:
+        nullpointer_txt.delete(0, END)
+        domain = config['nullpointer']['domain']
+        s = pyshorteners.Shortener(domain=domain)
+        result = s.nullpointer.short(url)
+        nullpointer_txt.insert(0, result)
+    except:
+        pass
 
 
 def osdb(url):
-    osdb_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.osdb.short(url)
-    osdb_txt.insert(0, result)
+    try:
+        osdb_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.osdb.short(url)
+        osdb_txt.insert(0, result)
+    except:
+        pass
 
 
 def owly(url):
-    owly_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.owly.short(url)
-    owly_txt.insert(0, result)
+    try:
+        owly_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.owly.short(url)
+        owly_txt.insert(0, result)
+    except:
+        pass
 
 
 def post():
-    post_txt.delete(0, END)
-    key = input("Enter API Key .. ")
-    s = pyshorteners.Shortener(api_key=key)
-    result = s.post.short(url)
-    post_txt.insert(0, result)
+    try:
+        post_txt.delete(0, END)
+        key = config['post']['API_KEY']
+        s = pyshorteners.Shortener(api_key=key)
+        result = s.post.short(url)
+        post_txt.insert(0, result)
+    except:
+        pass
 
 
 def qpsru():
-    qpsru_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.qpsru.short(url)
-    qpsru_txt.insert(0, result)
+    try:
+        qpsru_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.qpsru.short(url)
+        qpsru_txt.insert(0, result)
+    except:
+        pass
 
 
 def shortcm():
-    shortcm_txt.delete(0, END)
-    key = input("Enter API Key .. ")
-    s = pyshorteners.Shortener(api_key=key)
-    result = s.shortcm.short(url)
-    shortcm_txt.insert(0, result)
+    try:
+        shortcm_txt.delete(0, END)
+        key = config['shortcm']['API_KEY']
+        s = pyshorteners.Shortener(api_key=key)
+        result = s.shortcm.short(url)
+        shortcm_txt.insert(0, result)
+    except:
+        pass
 
 
 def tinycc(url):
-    tinycc_txt.delete(0, END)
-    key = input("Enter API Key .. ")
-    user_id = input("Enter username .. ")
-    s = pyshorteners.Shortener(api_key=key, login=user_id)
-    result = s.tinycc.short(url)
-    tinycc_txt.insert(0, result)
+    try:
+        tinycc_txt.delete(0, END)
+        key = config['tinycc']['API_KEY']
+        user_id = config['tinycc']['user_id]
+        s = pyshorteners.Shortener(api_key=key, login=user_id)
+        result = s.tinycc.short(url)
+        tinycc_txt.insert(0, result)
+    except:
+        pass
 
 
 def tinyurlcom(url):
-    tinyurlcom_txt.delete(0, END)
-    s = pyshorteners.Shortener()
-    result = s.tinyurl.short(url)
-    tinyurlcom_txt.insert(0, result)
+    try:
+        tinyurlcom_txt.delete(0, END)
+        s = pyshorteners.Shortener()
+        result = s.tinyurl.short(url)
+        tinyurlcom_txt.insert(0, result)
+    except:
+        pass
 
 
 def clicked():
@@ -340,7 +392,6 @@ tinyurlcom_txt.grid(column=1, row=15)
 
 bar = Progressbar(window, length=200, mode='determinate')
 bar.grid(column=1, row=16)
-
 
 window.configure(bg='#ECECEC')
 window.mainloop()
