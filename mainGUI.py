@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter.ttk import *
 import pyshorteners
+import configparser
 
 
 def adfly(url):
@@ -34,7 +35,7 @@ def clckru(url):
     clckru_txt.insert(0, result)
 
 
-def cuttly():
+def cuttly(url):
     cuttly_txt.delete(0, END)
     key = input("Enter API Key .. ")
     s = pyshorteners.Shortener(api_key=key)
@@ -110,8 +111,8 @@ def shortcm():
 def tinycc(url):
     tinycc_txt.delete(0, END)
     key = input("Enter API Key .. ")
-    user = input("Enter username .. ")
-    s = pyshorteners.Shortener(api_key=key, login=user)
+    user_id = input("Enter username .. ")
+    s = pyshorteners.Shortener(api_key=key, login=user_id)
     result = s.tinycc.short(url)
     tinycc_txt.insert(0, result)
 
@@ -216,7 +217,7 @@ window.title('URL Shortner')
 window.geometry('600x500')
 
 txt_width = 50
-default_checkbox = False
+default_checkbox = True
 
 targetURLlbl = Label(window, text='URL')
 targetURLtxt = Entry(window, width=50)
