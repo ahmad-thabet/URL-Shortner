@@ -158,7 +158,7 @@ def tinycc(url):
     try:
         tinycc_txt.delete(0, END)
         key = config['tinycc']['API_KEY']
-        user_id = config['tinycc']['user_id]
+        user_id = config['tinycc']['user_id']
         s = pyshorteners.Shortener(api_key=key, login=user_id)
         result = s.tinycc.short(url)
         tinycc_txt.insert(0, result)
