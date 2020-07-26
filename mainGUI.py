@@ -76,7 +76,6 @@ def gitio(url):
         gitio_txt.delete(0, END)
         s = pyshorteners.Shortener()
         result = s.gitio.short(url)
-        print(result,'gitio')
         gitio_txt.insert(0, result)
     except:
         pass
